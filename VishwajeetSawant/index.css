@@ -21,6 +21,7 @@ body {
     transition: all 0.3s ease-in-out;
     background-color: #ffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
 }
 
 .nav.sticky {
@@ -95,6 +96,10 @@ body {
     animation: fadeIn 1s ease-in-out;
 }
 
+.name:hover {
+    transform: scale(1.1);
+}
+
 .name div:first-child {
     font-size: 20px;
     font-weight: bold;
@@ -111,10 +116,12 @@ body {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
 }
+
 H3 {
     font-weight: 600;
     font-size: 2REM;
@@ -181,27 +188,86 @@ img {
     margin-bottom: 20px;
 }
 
+/* General styles for all screen sizes */
 .div3 {
     height: 100%;
     width: 100%;
 }
 
 .project-container {
-    height: 400px;
+    max-width: 1200px;
     width: 90%;
-    margin: 2% 5% 0% 5%;
+    margin: 2% auto;
     border: 2px solid #53ef53;
     border-radius: 20px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    padding: 20px
 }
 
 .project-card {
-    width: 40%;
+    width: 80%;
+    max-width: 600px;
     padding: 20px;
+    text-align: center;
 }
+
+.slideshow-container {
+    width: 100%;
+    max-width: 400px;
+    height: 200px;
+    position: relative;
+    margin: 20px auto;
+    border: 2px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.mySlides {
+    width: 100%;
+    /* Maintain fixed width for slides */
+    margin-right: 20px;
+    /* Add margin between slides */
+    box-sizing: border-box;
+    /* Include padding and border in the element's total width and height */
+}
+
+.slideshow-container img {
+    width: 100%;
+    height: 200px;
+}
+
+/* Media queries for different screen sizes */
+@media only screen and (min-width: 600px) {
+    .project-container {
+        flex-direction: row;
+    }
+
+    .project-card {
+        width: 40%;
+    }
+
+    .mySlides {
+        margin-right: 20px;
+        /* Adjust margin for larger screens */
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .project-card {
+        width: 50%;
+    }
+
+    .mySlides {
+        margin-right: 30px;
+        /* Adjust margin for larger screens */
+    }
+}
+
+/* Add more media queries as needed for larger screens */
+
 
 .div4 {
     height: 100%;
@@ -209,24 +275,6 @@ img {
 }
 
 /* Image Effect */
-.slideshow-container {
-    height: 300px;
-    width: 600px;
-    position: relative;
-    margin: 20px;
-    border: 2px solid black;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.mySlides {
-    display: none;
-}
-
-.slideshow-container img {
-   width: 600px;
-   height: 300px;
-}
 
 
 /* contact */
@@ -239,9 +287,11 @@ img {
     border-radius: 10px;
     text-align: center;
 }
-#contact-container h3{
+
+#contact-container h3 {
     margin-top: 0%;
 }
+
 #contactA {
     color: #333;
 }
@@ -254,7 +304,7 @@ img {
     top: 0;
 }
 
-#icon{
+#icon {
     width: 50px;
     height: 50px;
     margin: 10px;
